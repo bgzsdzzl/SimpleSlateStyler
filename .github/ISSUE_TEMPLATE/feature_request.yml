@@ -1,0 +1,72 @@
+name: Feature Request
+description: Suggest an idea or improvement for SimpleSlateStyler
+title: "[Feature] <Area> - <Short description>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+
+        `[Feature] <Area> - <Short description>`
+
+        Example: `[Feature] DSL Parser - support inherit for style composition`
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the plugin does this concern?
+      options:
+        - DSL Parser
+        - Brush Registry
+        - Subsystem API
+        - Scope Isolation
+        - Build
+        - Docs
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: One or two sentences summarizing the request and its motivation.
+      placeholder: I'm building a plugin and need to inherit a base brush from another style ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Concrete DSL syntax, API shape, behavior, edge cases, or examples.
+      placeholder: |
+        Add `inherit = Base.Style` support in the DSL:
+
+            MyPlugin.PanelBg {
+                inherit = Common.Panel
+                Tint = #FF6600
+            }
+
+        The entry is copied from Common.Panel and the listed
+        properties override the base.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Alternatives, references, or anything else.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have searched existing issues and confirmed this is not a duplicate.
+          required: true

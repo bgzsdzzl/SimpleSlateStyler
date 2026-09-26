@@ -1,0 +1,25 @@
+// Sample file. Drop this into:
+//   <Project>/Config/SimpleSlateStyler/
+// or
+//   <AnyPlugin>/Config/SimpleSlateStyler/
+//
+// After saving, the editor auto-reloads it.
+// In the console you can also run:
+//   SimpleSlateStyler.Reload
+//   SimpleSlateStyler.Dump
+
+// --- Texture brush ---------------------------------------------------------
+SimpleStyler.Sample.Icon {
+    Resource = /Engine/EditorResources/S_Level
+    Size = 16, 16
+}
+
+// --- Material brush with parameters ---------------------------------------
+SimpleStyler.Sample.Background {
+    Type = Material
+    Resource = /Engine/EngineMaterials/DefaultMaterial
+    Size = 128, 128
+    Color    = #FF6600
+    Speed    = 0.8
+    Roughness = 0.4
+}

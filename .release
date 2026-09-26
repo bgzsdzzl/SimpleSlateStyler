@@ -1,0 +1,12 @@
+# Files and directories packed into the source distribution.
+# One entry per line, relative to the repo root.
+# Comments and blank lines are ignored.
+
+SimpleSlateStyler.uplugin
+LICENSE
+NOTICE
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+Config
+Source

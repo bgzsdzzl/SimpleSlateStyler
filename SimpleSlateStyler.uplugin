@@ -1,0 +1,24 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0",
+  "FriendlyName": "Simple Slate Styler",
+  "Description": "Declare editor UI brushes (textures / materials) via .SimpleSlateStyler DSL files. Supports runtime material parameter tweaking and per-plugin style scopes.",
+  "Category": "Editor",
+  "CreatedBy": "<bgzsdzzl>",
+  "CreatedByURL": "https://github.com/bgzsdzzl",
+  "DocsURL": "https://github.com/bgzsdzzl/SimpleSlateStyler/blob/main/Docs/DSL.md",
+  "SupportURL": "https://github.com/bgzsdzzl/SimpleSlateStyler/issues",
+  "License": "Apache-2.0",
+  "CopyrightNotice": "Copyright 2026 <bgzsdzzl>",
+  "CanContainContent": false,
+  "IsBetaVersion": true,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "SimpleSlateStyler",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit"
+    }
+  ]
+}

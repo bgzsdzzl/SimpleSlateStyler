@@ -1,0 +1,38 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  pr-checks:
+    name: PR Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for build artifacts
+        run: |
+          FOUND=$(find . -type d \( -name Binaries -o -name Intermediate -o -name Saved \) 2>/dev/null | head -n 5)
+          if [ -n "$FOUND" ]; then
+            echo "::error::Compiled output is present and must not be committed:"
+            echo "$FOUND"
+            exit 1
+          fi
+          echo "OK: No compiled output."
+
+      - name: Check C++ syntax
+        run: python3 Scripts/check_syntax.py Source
+
+      - name: Check PR description mentions tests
+        if: github.event_name == 'pull_request'
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if ! echo "$PR_BODY" | grep -qiE "Build|Dump|Reload|Test|screenshot|log"; then
+            echo "::error::PR description does not mention any verification step. Please fill in the testing section."
+            exit 1
+          fi
+          echo "OK: PR description mentions verification."
