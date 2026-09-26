@@ -79,6 +79,7 @@ Plugins that use the same short name in different scopes never collide.
 
 ```cpp
 Sub->GetScopeNames();                    // ["MyPlugin", "OtherPlugin"]
+
 Sub->GetStylesInScope("MyPlugin");       // ["MyPlugin.PanelBg", ...]
 Sub->FindBrush("PanelBg", "MyPlugin");   // scope-aware lookup
 Sub->RemoveScope("MyPlugin");            // unregister the whole scope
